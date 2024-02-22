@@ -5,13 +5,13 @@ on: push
 jobs:
   cicd:
       name: cicd
-      runs-on: windows-latest
+      runs-on: ubuntu-latest
       steps:
         - name: Check code
           uses: actions/checkout@v2
 
         - name: Run Super-Linter
-          uses: github/super-linter@v3
+          uses: github/super-linter@v3.17.1
           env:
             DEFAULT_BRANCH: main
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
